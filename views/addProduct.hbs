@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <style>
+        .container-fluid2 {
+            background-color: white;
+            border-radius: 5px;
+            padding: 2%;
+            margin-top: 2px;
+        }
+
+        .page {
+            margin-top: 10px;
+            background-color: white;
+            border-bottom: 1px solid rgb(186, 186, 186);
+        }
+
+        .input-group-addon {
+            border: none;
+            background-color: white;
+        }
+
+        .form-control {
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid2">
+        <h2>{{title}} Product</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*"/>
+            <div class="input-group page">
+                <span class="input-group-addon page-addon"></span>
+                <input type="text" class="form-control page-control" name="name" placeholder="Name"
+                    value="{{item.name}}" required>
+            </div>
+            <div class="input-group page">
+                <span class="input-group-addon page-addon"></span>
+                <input type="number" min="0" class="form-control page-control" name="price" placeholder="Price"
+                    value="{{item.price}}" required>
+            </div>
+             <div class="input-group page">
+                <span class="input-group-addon page-addon"></span>
+                <input type="number" class="form-control page-control" name="quantity" min="0" placeholder="Quantity"
+                    value="{{item.type}}" required>
+            </div>
+            <div class="input-group page">
+                <span class="input-group-addon page-addon"></span>
+                <input type="text" class="form-control page-control" name="type" placeholder="Type"
+                    value="{{item.type}}" required>
+            </div>
+            <button type="submit" class="btn">{{title}}</button>
+        </form>
+        <span style="color: red;">{{error}}</span>
+    </div>
+    <script>
+    if ({{title}}=="Add"){
+        document.getElementById("myForm").action = "/product/add";
+    }else{
+        document.getElementById("myForm").action = "/product/edit/"+{{item._id}};
+    }
+    
+</script>
+
+</body>
+
+</html>

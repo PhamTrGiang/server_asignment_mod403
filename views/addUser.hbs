@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <style>
+        .container-fluid2 {
+            background-color: white;
+            border-radius: 5px;
+            padding: 2%;
+            margin-top: 2px;
+        }
+
+        .page {
+            margin-top: 10px;
+            background-color: white;
+            border-bottom: 1px solid rgb(186, 186, 186);
+        }
+
+        .input-group-addon {
+            border: none;
+            background-color: white;
+        }
+
+        .form-control {
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid2">
+        <h2>{{title}} User</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*"/>
+            <div class="input-group page">
+                <span class="input-group-addon page-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="msg" type="text" class="form-control page-control" name="name" placeholder="Full Name"
+                    value="{{account.name}}" required>
+            </div>
+            <div class="input-group page">
+                <span class="input-group-addon"><i class="	glyphicon glyphicon-envelope"></i></span>
+                <input id="email" type="email" class="form-control" name="email" placeholder="Email"
+                    value="{{account.email}}" required>
+                <script>
+                    if ({{ title }}== "Add") {
+                        document.getElementById("myForm").action = "/user/add";
+                    }else {
+                        document.getElementById("myForm").action = "/user/edit/" + {{ account._id }};
+                    }
+                    
+                </script>
+            </div>
+            <div class="input-group page">
+                <span class="input-group-addon page-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control page-control" name="password"
+                    placeholder="Password" value="{{account.password}}" required>
+            </div>
+            <div class="checkbox">
+                <label><input id="checkadmin" type="checkbox" name="admin">Admin</label>
+            </div>
+            <script>
+                if({{account.status}}==true){
+                    document.getElementById("checkadmin").checked = true;
+                }
+            </script>
+            
+            <button type="submit" class="btn">{{title}}</button>
+        </form>
+        <span style="color: red;">{{error}}</span>
+    </div>
+
+
+</body>
+
+</html>

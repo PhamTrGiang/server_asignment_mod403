@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Manager</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="page-top row">
+            <h2 class="col-md-10">Products</h2>
+            <div class="col-md-2">
+                <a class="btn-add btn" href="/product/add">Add</a>
+            </div>
+        </div>
+        <div class="list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Stt</th>
+                        <th>Imager</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Type</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each arr}}
+                    <tr>
+                        <td>
+                            <span class="stt"></span>
+                            <script>
+                                var stt = {{@index}}+1;
+                                document.getElementsByClassName('stt')[{{ @index }}].innerHTML = stt;
+                            </script>
+                        </td>
+                        <td><img src="../{{this.image}}" alt="avatar" height="25px" width="25px"></td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.price}} vnđ</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{this.type}}</td>
+                        <td>
+                            <a class="btn-item btn" href="/product/delete/{{this._id}}"
+                                onclick="return confirm('Do you want to delete?')"><i
+                                    class="glyphicon glyphicon-trash"></i></a>
+                            <a class="btn-item btn" href="/product/update/{{this._id}}"><i
+                                    class="glyphicon glyphicon-pencil"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

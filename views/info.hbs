@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <title>Infomation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Infomation</h1>
+        <img src="../{{account.image}}" alt="avatar" height="100px" width="100px" style="border-radius: 50%;">
+        <h4>{{account.name}}</h4>
+        <h5>{{account.email}}</h5>
+        <a href="/user/update/{{account._id}}" class="btn btn-default">Edit</a>
+    </div>
+
+</body>
+
+</html>

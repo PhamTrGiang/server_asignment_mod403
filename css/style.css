@@ -1,0 +1,87 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(235, 234, 234);
+}
+
+aside{
+    background-color: white;
+    padding-bottom: 10px;
+    border-bottom-right-radius: 30px;
+}
+.page-nav{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid rgb(235, 234, 234);
+}
+.navbar-right{
+    margin: auto 10px;
+}
+.navbar-left{
+    margin: 11px 10px;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 100px;
+    padding:0px 8px;
+}
+
+.input-group-btn>.btn-default, .form-control{
+    border: none;
+}
+
+
+.page-top{
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 5px 5px 0px 0px;
+    margin: 3px 0px;
+}
+
+h2{
+    padding: 0px;
+    margin: 0px;
+}
+
+.btn-add{
+    border: 0px;
+    padding: 5px;
+    width: 80px;
+    border-radius: 3px;
+    background-color: #7bc74d;
+    color: white;
+    font-weight: bold;
+}
+.btn-add:hover{
+    background-color: #90bc75;
+}
+
+.btn-add:focus{
+    background-color: #4f862d;
+}
+.table{
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.page-info{
+    background-color: white;
+    padding: 5px 15px;
+    border: 3px solid rgb(235, 234, 234);
+    text-align: center;
+    padding: 20px 0px;
+    border-radius: 5px;
+}
+
+.btn-item{
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 3px;
+}
+
+.btn-item:hover{
+    background-color: rgb(228, 225, 225);
+}
+
+.btn-item:focus{
+    background-color: rgb(193, 193, 193);
+}
