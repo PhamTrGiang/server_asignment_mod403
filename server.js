@@ -6,8 +6,9 @@ const app = express()
 const port = 3000
 
 const mongoose = require("mongoose");
+
 const uri =
-  "mongodb+srv://giang:huNAGXZenvebYdgi@cluster0.r13gxca.mongodb.net/cp17301?retryWrites=true&w=majority";
+  "mongodb://127.0.0.1:27017/assignment";
 
 const accountModel = require("./model/accountModel");
 const productModel = require("./model/productModel");
