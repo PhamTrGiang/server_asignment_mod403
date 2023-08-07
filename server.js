@@ -86,7 +86,6 @@ function checkAccount(array, email) {
 app.post("/", async (req, res) => {
   await mongoose.connect(uri);
   var arr = await accountModel.find().lean();
-  console.log(arr);
   var email = req.body.email;
   var password = req.body.password;
   var error;
